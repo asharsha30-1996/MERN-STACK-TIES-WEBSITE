@@ -2,6 +2,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('mongodb');
+const path=require('path');
+const dotenv=require('dotenv')
 
 // Create an instance of Express
 const app = express();
@@ -31,6 +33,17 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
   .catch(error => {
     console.error('Error connecting to MongoDB:', error);
   });
+
+  //deployment
+
+  __dirname=path.resolve();
+  if (process.env.NODE_ENV=='production'){
+    app.use(express.static(path.join(__dirname,"/FRONTEND/FRONT_END'/front/build")));
+
+    app.get('*',(req,res)=>{
+      res.SendFile(path.resolve(__dirname,'FRONTEND','build','index.html'))
+    });
+  }
 
 // Start the server
 const PORT = 3006;

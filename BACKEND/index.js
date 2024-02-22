@@ -38,10 +38,10 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
 
   __dirname=path.resolve();
   if (process.env.NODE_ENV=='production'){
-    app.use(express.static(path.join(__dirname,"/FRONTEND/FRONT_END'/front/build")));
+    app.use(express.static(path.join(__dirname,"/FRONTEND/build")));
 
     app.get('*',(req,res)=>{
-      res.SendFile(path.resolve(__dirname,'FRONTEND','build','index.html'))
+      res.SendFile(path.resolve(__dirname,'FRONTEND','index.html'))
     });
   }
 

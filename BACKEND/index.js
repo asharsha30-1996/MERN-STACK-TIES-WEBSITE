@@ -41,7 +41,7 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
     app.use(express.static(path.join(__dirname,"/FRONTEND/build")));
 
     app.get('*',(req,res)=>{
-      res.sendFile(path.resolve(__dirname,'FRONTEND','index.html'))
+      res.sendFile(path.resolve(__dirname,'FRONTEND','public','index.html'))
     });
   }
 

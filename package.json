@@ -5,6 +5,8 @@
     "start-backend": "npm start --prefix BACKEND",
     "start-frontend": "npm start --prefix FRONTEND",
     "build": "npm run build --prefix FRONTEND",
-    "postinstall": "npm run install-backend && npm run install-frontend"
+    "postinstall": "npm run install-backend && npm run install-frontend",
+    "start": "npm start --prefix BACKEND"
+
   }
 }

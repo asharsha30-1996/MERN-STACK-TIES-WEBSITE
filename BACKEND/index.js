@@ -46,7 +46,7 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
   }
 
 // Start the server
-const PORT = 3006;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

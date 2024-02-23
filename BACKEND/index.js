@@ -38,11 +38,11 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
 
   __dirname=path.resolve();
   if (process.env.NODE_ENV=='production'){
-    app.use(express.static(path.join(__dirname, '..', 'FRONTEND', 'build')));
+    app.use('*',express.static(path.join(__dirname, '..', 'FRONTEND', 'build')));
 
-    app.get('*',(req,res)=>{
-      res.sendFile(path.resolve(__dirname, '..', 'FRONTEND', 'build', 'index.html'))
-    });
+    //app.get('*',(req,res)=>{
+     // res.sendFile(path.resolve(__dirname, '..', 'FRONTEND', 'build', 'index.html'))
+    //});
   }
 
 // Start the server

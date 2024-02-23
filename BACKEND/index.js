@@ -36,7 +36,7 @@ mongodb.MongoClient.connect(url, { useUnifiedTopology: true })
 
   //deployment
 
-  __dirname=path.resolve();
+  //__dirname=path.resolve();
   if (process.env.NODE_ENV=='production'){
     app.use(express.static(path.join(__dirname, '..', 'FRONTEND', 'build')));
 

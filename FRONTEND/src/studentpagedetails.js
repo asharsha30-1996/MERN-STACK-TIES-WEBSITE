@@ -229,7 +229,7 @@ function RoomPage() {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/rooms/${roomId}`);
+        const response = await fetch(`/api/rooms/${roomId}`);
         if (response.ok) {
           const data = await response.json();
           setStudents(data);
